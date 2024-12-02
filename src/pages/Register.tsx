@@ -5,6 +5,7 @@ import PaintImage from "../assets/paintingImage.png";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -16,7 +17,11 @@ const Register = () => {
 
     try {
       const endpoint = `${import.meta.env.VITE_API_URL}/auth/register`;
-      const response = await axios.post(endpoint, { email, password });
+      const response = await axios.post(endpoint, {
+        email,
+        password,
+        username,
+      });
 
       const { accessToken, refreshToken } = response.data;
       localStorage.setItem("access_token", accessToken);
@@ -49,6 +54,19 @@ const Register = () => {
             placeholder="yours@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+            className="p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+          <label htmlFor="username" className="mb-1 font-medium">
+            Enter your username
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="task master"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
             className="p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           />
