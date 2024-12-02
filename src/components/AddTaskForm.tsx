@@ -20,7 +20,9 @@ const AddTaskForm = ({ setTasks, onClose }: AddTaskFormProps) => {
   const fetchWeather = async (city: string) => {
     try {
       const response = await axios.get(
-        `https://api.weatherapi.com/v1/current.json?key=5e5763c7175b4db792853554242107&q=${city}`
+        `https://api.weatherapi.com/v1/current.json?key=${
+          import.meta.env.VITE_WEATHER_API_KEY
+        }&q=${city}`
       );
       return response.data.current.temp_c;
     } catch (error) {
