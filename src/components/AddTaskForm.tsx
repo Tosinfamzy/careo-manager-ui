@@ -27,7 +27,7 @@ const AddTaskForm = ({ setTasks, onClose }: AddTaskFormProps) => {
       return response.data.current.temp_c;
     } catch (error) {
       console.error("Error fetching weather data:", error);
-      return "Weather data not available";
+      return null;
     }
   };
 
