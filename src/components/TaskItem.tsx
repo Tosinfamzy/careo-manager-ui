@@ -58,7 +58,7 @@ const TaskItem = ({ task, handleDeleteTask }: TaskItemProps) => {
 
   return (
     <tr className="hover:bg-gray-100">
-      <td className="p-4">
+      <td className="p-4 hidden sm:table-cell">
         <input
           type="checkbox"
           checked={isComplete}
@@ -104,8 +104,10 @@ const TaskItem = ({ task, handleDeleteTask }: TaskItemProps) => {
           {task.tag || "None"}
         </span>
       </td>
-      <td className="p-4">{task.weather ? `${task.weather} °C` : ""}</td>
-      <td className="p-4 flex items-center gap-2">
+      <td className="p-4 hidden sm:table-cell">
+        {task.weather ? `${task.weather} °C` : ""}
+      </td>
+      <td className="p-4 items-center gap-2 hidden sm:table-cell">
         <SlPencil
           className="text-gray-900 hover:text-blue-700 cursor-pointer"
           onClick={handleEditClick}
