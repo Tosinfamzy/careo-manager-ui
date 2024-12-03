@@ -85,3 +85,7 @@ VITE_API_URL=http://localhost:3000
 ```
 
 Replace with your API URL if different.
+
+## Improvements
+
+- Refactor Table to be more responsive the smallest screens

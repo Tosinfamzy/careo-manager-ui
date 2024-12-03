@@ -107,7 +107,7 @@ const TaskItem = ({ task, handleDeleteTask }: TaskItemProps) => {
       <td className="p-4 hidden sm:table-cell">
         {task.weather ? `${task.weather} °C` : ""}
       </td>
-      <td className="p-4 items-center gap-2 hidden sm:table-cell">
+      <td className="p-4 flex flex-row items-center">
         <SlPencil
           className="text-gray-900 hover:text-blue-700 cursor-pointer"
           onClick={handleEditClick}

@@ -22,24 +22,20 @@ const TaskList: React.FC<TaskListProps> = ({
     <div className="overflow-x-auto">
       <Table className="w-full rounded border-2">
         <Table.Head>
-          <Table.HeadCell className="hidden sm:table-cell"></Table.HeadCell>
+          <Table.HeadCell></Table.HeadCell>
           <Table.HeadCell className="flex items-center flex-row">
             <FaStream className="mr-2" />
             Task Name
           </Table.HeadCell>
           <Table.HeadCell>Due Date</Table.HeadCell>
           <Table.HeadCell>Tag</Table.HeadCell>
-          {!showCompleted && (
-            <Table.HeadCell className="hidden sm:table-cell">
-              Actions
-            </Table.HeadCell>
-          )}
+          {!showCompleted && <Table.HeadCell>Actions</Table.HeadCell>}
         </Table.Head>
         <Table.Body className="divide-y">
           {tasks.map((task) =>
             showCompleted ? (
               <tr key={task.id} className="hover:bg-white-100">
-                <td className="p-4 hidden sm:table-cell">
+                <td className="p-4">
                   <input
                     type="checkbox"
                     checked={task.done}

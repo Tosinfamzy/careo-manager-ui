@@ -60,7 +60,7 @@ const TaskPage = () => {
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-xl font-bold">My Tasks for the Next Month</h1>
           <div className="mb-6 flex">
-            <div className="relative w-full">
+            <div className="relative w-full hidden sm:block">
               <FaSistrix className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
@@ -70,7 +70,11 @@ const TaskPage = () => {
                 placeholder="Search tasks..."
               />
             </div>
-            <Button color="light" onClick={handleLogout}>
+            <Button
+              color="light"
+              onClick={handleLogout}
+              className="hidden sm:block"
+            >
               Logout
             </Button>
           </div>
