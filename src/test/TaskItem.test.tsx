@@ -1,5 +1,5 @@
 import { render, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { describe, it, expect, vi } from "vitest";
 import TaskItem from "../components/TaskItem";
 import { Task } from "../interfaces/task.interface";
 
@@ -12,7 +12,7 @@ const mockTask: Task = {
   weather: "25",
 };
 
-const handleDeleteTask = jest.fn();
+const handleDeleteTask = vi.fn();
 
 describe("TaskItem", () => {
   it("renders task details correctly", () => {

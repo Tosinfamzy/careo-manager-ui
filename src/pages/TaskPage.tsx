@@ -55,7 +55,10 @@ const TaskPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 w-10/12 justify-center mx-auto">
+    <div
+      data-testid="task-page"
+      className="min-h-screen bg-gray-50 w-10/12 justify-center mx-auto"
+    >
       <main className="p-4">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-xl font-bold">My Tasks for the Next Month</h1>

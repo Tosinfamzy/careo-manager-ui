@@ -67,7 +67,7 @@ const AddTaskForm = ({ setTasks, onClose }: AddTaskFormProps) => {
   };
 
   return (
-    <div className="space-y-4">
+    <div data-testid="add-task-form" className="space-y-4">
       <input
         type="text"
         value={taskName}

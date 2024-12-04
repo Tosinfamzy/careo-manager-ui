@@ -35,7 +35,10 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
+    <div
+      data-testid="register-page"
+      className="flex justify-center items-center min-h-screen bg-gray-100 p-6"
+    >
       <div className="max-w-md w-full p-8 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-2">Welcome!</h2>
         <h3 className="text-lg mb-6">

@@ -1,9 +1,11 @@
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import axios from "axios";
+import { describe, it, expect, vi } from "vitest";
+
 import Register from "../pages/Register";
 
-jest.mock("axios");
+vi.mock("axios");
 
 describe("Register", () => {
   it("renders registration form correctly", () => {
@@ -39,6 +41,8 @@ describe("Register", () => {
         username: "testuser",
       }
     );
+
+    vi.spyOn(localStorage, "setItem");
 
     await waitFor(() => {
       expect(localStorage.setItem).toHaveBeenCalledWith(

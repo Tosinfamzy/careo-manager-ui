@@ -1,10 +1,11 @@
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import axios from "axios";
+import { describe, it, expect, vi } from "vitest";
 
 import Login from "../pages/Login";
 
-jest.mock("axios");
+vi.mock("axios");
 
 describe("Login", () => {
   it("renders login form correctly", () => {
@@ -30,6 +31,8 @@ describe("Login", () => {
       `${import.meta.env.VITE_API_URL}/auth/login`,
       { email: "test@example.com", password: "password" }
     );
+
+    vi.spyOn(localStorage, "setItem");
 
     await waitFor(() => {
       expect(localStorage.setItem).toHaveBeenCalledWith(

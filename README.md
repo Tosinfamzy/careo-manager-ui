@@ -63,6 +63,16 @@ yarn dev
 
 Open your browser and navigate to `http://localhost:5173` to see the app.
 
+## Running Tests
+
+To run the tests using Vitest, use the following command:
+
+```bash
+npm run test
+# or
+yarn test
+```
+
 ## Project Structure
 
 - `src/` - Main source code
